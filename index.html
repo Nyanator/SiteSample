@@ -1,54 +1,80 @@
 <html lang="ja">
-  <head>
+<head>
     <!-- Google Tag Manager -->
     <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-PL8K32Z");
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dataLayer", "GTM-PL8K32Z");
     </script>
     <!-- End Google Tag Manager -->
 
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <!-- httpをhttpsにリダイレクトするためのトリック -->
     <script type="text/javascript">
-      if (
-        document.location.protocol !== "https:" &&
-        "Nyanator.github.io" === window.location.host
-      ) {
-        window.location.href = window.location.href.replace(
-          "http://",
-          "https://"
-        );
-      }
+        if (
+            document.location.protocol !== "https:" &&
+            "Nyanator.github.io" === window.location.host
+        ) {
+            window.location.href = window.location.href.replace(
+                "http://",
+                "https://"
+            );
+        }
     </script>
     <!-- 各ブラウザの違いを自力で吸収するのは大変なのでCDNからnormalize.cssを読み込む -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"
-      rel="stylesheet"
-    />
-    <title>作品制作のテスト</title>
-  </head>
-  <body>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <!-- JQueryをCDNから読み込む-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- スライダーライブラリのswiperをCDNから読み込む -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    <title>テスト</title>
+</head>
+<body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-PL8K32Z"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PL8K32Z"
+                height="0"
+                width="0"
+                style="display: none; visibility: hidden"></iframe>
+    </noscript>
     <!-- End Google Tag Manager (noscript) -->
-  </body>
+    <!-- ロード中スピナー -->
+    <div class="spinner-container">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading</div>
+    </div>
+    <!-- メイン -->
+    <main>
+        <!-- スライダーのコンテナ -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image: url('img/img1.png');"></div>
+                <div class="swiper-slide" style="background-image: url('img/img2.png');"></div>
+                <div class="swiper-slide" style="background-image: url('img/img3.png');"></div>
+                <div class="swiper-slide" style="background-image: url('img/img4.png');"></div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <div class="swiper-pagination">
+                <div class="btn">ボタン１</div>
+                <div class="btn">ボタン２</div>
+                <div class="btn">ボタン３</div>
+                <div class="btn">ボタン４</div>
+            </div>
+        </div>
+    </main>
+</body>
 </html>
